@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasteryMultipleService</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main.js">
+</head>
+<body>
+    
+
+    <header>
+        <a href="#" class="brand">Desarrolla y Aprende</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Inicio</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div> 
+    </header>
+   
+    <section class="home">
+        <video class="video-slide active" src="img/1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="img/2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="img/3.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Tech<br><span>Services</span></h1>
+            <p>Se crean proyectos digitales tales como; sitios web con la integracion de herramientas como HTML, CSS y JavaScript para la modificacion y adaptibilidad de dispositivos digitales. Asi como tambien la instalación de softwares para maquinas básicas o modernas.</p>
+            <a href="https://claude.ai/chat/fb95a849-6bd6-4f64-b084-e102ebb180f6">Contacta</a>
+        </div>
+        <div class="content">
+            <h1>Gaming<br><span>Place</span></h1>
+            <p>Explora y divierte con nuevo contenido único basado en plataformas de videojuegos retro y modernos.</p>
+            <a href="https://www.pexels.com/es-es/">Descubrir</a>
+        </div>
+        <div class="content">
+            <h1>ELT Teacher<br><span>English</span></h1>
+            <p>¿Problemas con Inglés?, no se preocupe que aquí se hacen regularizaciones del idioma especializado en Inglés.</p>
+            <a href="https://iconos8.es/icon/set/menu/group-3d">Quiero aprender</a>
+        </div>
+
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn" active></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="logo.png" alt="Aún se está desarrollando el logo" class="footer-logo">
+                <p class="footer-description">Bienvenidos a la forma base de la web= aun en desarrollo</p>
+                <div class="social-icons">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-section">
+                <h4 class="footer-title">Enlaces Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Tech service</a></li>
+                    <li><a href="#" class="footer-link">GamingPlace</a></li>
+                    <li><a href="#" class="footer-link">ELT service</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h4 class="footer-title">Servicios</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Aprende inglés en un dos por tres= de bolon pinpon</a></li>
+                    <li><a href="#" class="footer-link">Servicios eficiente</a></li>
+                    <li><a href="#" class="footer-link">Desarrolla estrategias</a></li>
+                    <li><a href="#" class="footer-link">¿Ya vieron al abogado de Hell's kitchen?</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h4 class="footer-title">Contacto</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> No disponible por el momento</li>
+                    <li><i class="fas fa-phone"></i> No disponible</li>
+                    <li><i class="fas fa-envelope"></i> No disponible</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2025 ChomboGames. Todos los derechos reservados.</p>
+            <div class="legal-links">
+                <a href="#" class="legal-link">Política de Privacidad</a>
+                <a href="#" class="legal-link">Términos de Servicio</a>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script>
+        const menuBtn= document.querySelector(".menu-btn");
+        const navigation= document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () =>{
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+        });
+
+        const btns= document.querySelectorAll(".nav-btn");
+        const slides= document.querySelectorAll(".video-slide");
+        const content= document.querySelectorAll(".content");
+
+        var sliderNav= function(manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            content.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            content[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () =>{
+                sliderNav(i);
+            });
+        });
+    </script>
+</body>
+</html>
